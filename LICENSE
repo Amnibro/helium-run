@@ -1,0 +1,19 @@
+Helium Run
+Copyright (c) 2026 Amniscient, LLC. All rights reserved.
+
+You may download, install and use Helium Run, and read its source code, on
+these terms:
+
+1. Without a subscription you may run up to 25 programs a day on each
+   computer.
+2. Unlimited use requires an active Helium Run subscription from
+   https://amni-scient.com/helium-run.html.
+3. You may not remove, bypass or change the license check or the daily
+   limit, and you may not redistribute modified copies.
+4. The software is provided "as is", without warranty of any kind. Amniscient,
+   LLC is not liable for any damages arising from its use, including damages
+   caused by programs it compiles or runs.
+
+The Helium compiler, runtime header and standard library bundled with Helium
+Run (bin/, include/ and lib/) are licensed separately under the Apache
+License 2.0; see LICENSE-helium.txt.

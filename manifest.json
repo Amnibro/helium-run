@@ -1,0 +1,38 @@
+{
+  "manifest_version": "0.2",
+  "name": "helium-run",
+  "display_name": "Helium Run",
+  "version": "0.0.0",
+  "description": "Let Claude write programs in Helium and run them at native speed on your Mac.",
+  "long_description": "Helium is a compiled language that runs at about the speed of C and Rust, often 10 to 70 times faster than Python, and Claude writes it correctly from a short primer. Helium Run gives Claude three tools: read the primer, check a program, and compile and run it on your Mac. 25 runs a day are free; a subscription at amni-scient.com/helium-run.html makes them unlimited. Needs the Xcode command line tools (run xcode-select --install once).",
+  "author": {"name": "Amniscient, LLC", "url": "https://amni-scient.com"},
+  "homepage": "https://amni-scient.com/helium-run.html",
+  "support": "https://github.com/Amnibro/helium-run/issues",
+  "license": "LicenseRef-Helium-Run",
+  "server": {
+    "type": "node",
+    "entry_point": "server.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server.mjs"],
+      "env": {"HELIUM_RUN_KEY": "${user_config.license_key}"}
+    }
+  },
+  "tools": [
+    {"name": "helium_learn", "description": "Read the Helium language primer."},
+    {"name": "helium_run", "description": "Compile a Helium program and run it."},
+    {"name": "helium_check", "description": "Typecheck a Helium program without running it."}
+  ],
+  "keywords": ["helium", "compiler", "code", "performance", "programming language"],
+  "compatibility": {"platforms": ["darwin"], "runtimes": {"node": ">=18.0.0"}},
+  "user_config": {
+    "license_key": {
+      "type": "string",
+      "title": "License key",
+      "description": "Optional. Paste your Helium Run key for unlimited runs. Without one you get 25 runs a day.",
+      "sensitive": true,
+      "required": false,
+      "default": ""
+    }
+  }
+}
